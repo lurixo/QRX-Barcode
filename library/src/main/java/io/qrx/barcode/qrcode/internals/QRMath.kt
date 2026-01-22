@@ -1,0 +1,21 @@
+package io.qrx.barcode.qrcode.internals
+
+internal object QRMath {
+    private val EXP_TABLE = IntArray(256)
+    private val LOG_TABLE = IntArray(256)
+
+    init {
+        for (i in 0..7) EXP_TABLE[i] = 1 shl i
+        for (i in 8..255) EXP_TABLE[i] = EXP_TABLE[i - 4] xor EXP_TABLE[i - 5] xor EXP_TABLE[i - 6] xor EXP_TABLE[i - 8]
+        for (i in 0..254) LOG_TABLE[EXP_TABLE[i]] = i
+    }
+
+    fun glog(n: Int) = LOG_TABLE[n]
+
+    fun gexp(n: Int): Int {
+        var i = n
+        while (i < 0) i += 255
+        while (i >= 256) i -= 255
+        return EXP_TABLE[i]
+    }
+}
