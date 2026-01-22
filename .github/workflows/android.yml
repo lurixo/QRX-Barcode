@@ -3,6 +3,7 @@ name: Android CI
 on:
   push:
     branches: [ "dev" ]
+    tags: [ "v*" ]
   pull_request:
     branches: [ "dev" ]
   workflow_dispatch:
@@ -25,26 +26,23 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew build
+      - name: Build Release
+        run: ./gradlew :library:assembleRelease
 
       - name: Run tests
         run: ./gradlew test
-
-      - name: Build Release AAR
-        run: ./gradlew :library:assembleRelease
 
       - name: Upload AAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: qrx-barcode-release
-          path: library/build/outputs/aar/*.aar
+          path: library/build/outputs/aar/*-release.aar
           retention-days: 30
 
   release:
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+    if: startsWith(github.ref, 'refs/tags/v')
 
     steps:
       - name: Checkout code
@@ -63,14 +61,9 @@ jobs:
       - name: Build Release AAR
         run: ./gradlew :library:assembleRelease
 
-      - name: Get version
-        id: version
-        run: echo "VERSION=$(grep 'version =' library/build.gradle.kts | head -1 | cut -d'"' -f2)" >> $GITHUB_OUTPUT
-
       - name: Create Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: library/build/outputs/aar/*.aar
+          files: library/build/outputs/aar/*-release.aar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
