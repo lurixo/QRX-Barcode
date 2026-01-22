@@ -41,9 +41,9 @@ dependencies {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "io.qrx"
-            artifactId = "barcode"
-            version = "1.0.0"
+            afterEvaluate {
+                from(components["release"])
+            }
 
             pom {
                 name.set("QRX Barcode")
