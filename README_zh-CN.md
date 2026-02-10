@@ -54,7 +54,6 @@ val barcode = BarcodeGenerator.generateBitmap("ABC123", BarcodeType.Code128, 400
 - **Android Gradle Plugin**: 9.0.0
 - **Gradle**: 9.3.1
 - **最低 SDK**: 34 (Android 14)
-- **目标 SDK**: 36 (Android 16)
 - **编译 SDK**: 36
 
 ## 安装

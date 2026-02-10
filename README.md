@@ -54,7 +54,6 @@ None. This library uses only Android SDK built-in APIs (`android.graphics.*`) wi
 - **Android Gradle Plugin**: 9.0.0
 - **Gradle**: 9.3.1
 - **Min SDK**: 34 (Android 14)
-- **Target SDK**: 36 (Android 16)
 - **Compile SDK**: 36
 
 ## Installation
