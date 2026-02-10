@@ -50,7 +50,6 @@ val barcode = BarcodeGenerator.generateBitmap("ABC123", BarcodeType.Code128, 400
 
 ## 环境要求
 
-- **Kotlin**: 2.3.0
 - **Java**: 25
 - **Android Gradle Plugin**: 9.0.0
 - **Gradle**: 9.3.1

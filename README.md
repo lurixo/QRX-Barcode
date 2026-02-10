@@ -50,7 +50,6 @@ None. This library uses only Android SDK built-in APIs (`android.graphics.*`) wi
 
 ## Requirements
 
-- **Kotlin**: 2.3.0
 - **Java**: 25
 - **Android Gradle Plugin**: 9.0.0
 - **Gradle**: 9.3.1
