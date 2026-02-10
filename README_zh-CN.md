@@ -68,7 +68,7 @@ include(":library")
 implementation(project(":library"))
 ```
 
-### JitPack (即将支持)
+### JitPack
 
 ```kotlin
 // settings.gradle.kts
