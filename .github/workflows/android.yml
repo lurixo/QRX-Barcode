@@ -38,7 +38,7 @@ jobs:
       - name: Upload AAR artifact
         uses: actions/upload-artifact@v4
         with:
-          name: qrx-barcode-release
+          name: QRX-Barcode-release
           path: library/build/outputs/aar/*-release.aar
           retention-days: 30
 

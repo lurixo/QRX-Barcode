@@ -9,8 +9,8 @@ android {
 
     defaultConfig {
         minSdk = 34
+        targetSdk = 36
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -25,17 +25,9 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
     }
-}
-
-dependencies {
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.core)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.androidx.test.espresso)
-    androidTestImplementation(libs.androidx.test.runner)
 }
 
 publishing {
@@ -47,8 +39,8 @@ publishing {
 
             pom {
                 name.set("QRX Barcode")
-                description.set("Pure Android barcode generation library, zero Compose dependency")
-                url.set("https://github.com/lurixo/qrx-barcode")
+                description.set("Pure Android barcode generation library, zero external dependencies")
+                url.set("https://github.com/lurixo/QRX-Barcode")
 
                 licenses {
                     license {

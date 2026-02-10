@@ -1,2 +1,2 @@
-# Consumer ProGuard rules for qrx-barcode library
+# Consumer ProGuard rules for QRX-Barcode library
 # These rules will be applied to consumers of this library

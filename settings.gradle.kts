@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "qrx-barcode"
+rootProject.name = "QRX-Barcode"
 include(":library")

@@ -1,10 +1,10 @@
 # QRX Barcode
 
-[![Android CI](https://github.com/lurixo/qrx-barcode/actions/workflows/android.yml/badge.svg)](https://github.com/lurixo/qrx-barcode/actions/workflows/android.yml)
+[![Android CI](https://github.com/lurixo/QRX-Barcode/actions/workflows/android.yml/badge.svg)](https://github.com/lurixo/QRX-Barcode/actions/workflows/android.yml)
 
 [简体中文](README_zh-CN.md)
 
-Pure Android barcode generation library, zero Compose dependency.
+Pure Android barcode generation library, zero external dependencies.
 
 ## Origin
 
@@ -44,12 +44,17 @@ val barcode = BarcodeGenerator.generateBitmap("ABC123", BarcodeType.Code128, 400
 - **QR Code**: L/M/Q/H error correction levels
 - **1D Barcode**: Code128, Code39, Code93, EAN13, EAN8, UPCA, UPCE, ITF, Codabar
 
+## Dependencies
+
+None. This library uses only Android SDK built-in APIs (`android.graphics.*`) with no third-party dependencies.
+
 ## Requirements
 
-- **Java**: 21
+- **Java**: 25
 - **Android Gradle Plugin**: 9.0.0
-- **Gradle**: 9.3.0
+- **Gradle**: 9.3.1
 - **Min SDK**: 34 (Android 14)
+- **Target SDK**: 36 (Android 16)
 - **Compile SDK**: 36
 
 ## Installation
@@ -75,7 +80,7 @@ dependencyResolutionManagement {
 }
 
 // app/build.gradle.kts
-implementation("com.github.lurixo:qrx-barcode:1.0.0")
+implementation("com.github.lurixo:QRX-Barcode:1.0.0")
 ```
 
 ## License
